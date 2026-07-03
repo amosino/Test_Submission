@@ -41,13 +41,26 @@ La @fig-histograma-isvp es una gráfica interactiva.
 ```{r}
 #| label: fig-histograma-isvp
 #| fig-cap: "Distribución del índice de severidad de violencia de pareja"
+
 library(ggplot2)
+library(plotly)
+
 violence_index <- readRDS("../../03. Results/Data/data-violence_index.rds")
-ggplot(violence_index, aes(x = violence_index, weight = FAC_MUJ)) +
-geom_histogram(bins = 40) +
-labs(
-x = "Índice de severidad",
-y = "Frecuencia ponderada"
+
+p <- ggplot(violence_index, aes(x = violence_index, weight = FAC_MUJ,
+                                text = paste0("Índice: ", round(after_stat(x), 2),
+                                               "<br>Frecuencia ponderada: ",
+                                                after_stat(count)))) +
+  geom_histogram(bins = 40) +
+  labs(
+    x = "Índice de severidad",
+    y = "Frecuencia ponderada"
   ) +
-theme_minimal()
+  theme_bw()
+
+ggplotly(p, tooltip = "text") |>
+  layout(
+    hoverlabel = list(bgcolor = "white"),
+    margin = list(t = 40)
+  )
 ```
