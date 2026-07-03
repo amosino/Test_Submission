@@ -1,0 +1,37 @@
+---
+title: "Prueba Positron/Github"
+author:
+  - name: Alejandro Mosiño
+    email: Alejandro.Mosino@gmail.com
+abstract: |
+  Este es un paper de prueba.
+keywords:
+  - Test
+  - Paper
+  - Github
+  - Positron
+date: today
+lang: es
+format:
+  html:
+    theme: cosmo
+    toc: false
+    number-sections: false
+    code-fold: false
+    fig-align: center
+    fig-width: 7
+    fig-height: 5
+    df-print: paged
+    self-contained: true
+  pdf:
+    pdf-engine: xelatex
+execute:
+  echo: false
+  warning: false
+  message: false
+editor: visual
+---
+
+# Introducción
+
+Este es un paper de prueba.

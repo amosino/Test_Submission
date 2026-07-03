@@ -1,0 +1,19 @@
+# Quarto
+.quarto/
+
+# LaTeX intermedios (por si algo queda)
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Entornos (por si algún día los usas aquí)
+venv/
+__pycache__/
+.Rproj.user/
+.Rhistory
